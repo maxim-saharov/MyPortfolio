@@ -1,0 +1,58 @@
+.btn {
+   height: 45px;
+   background: $main-color;
+   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+   padding: 12px 25px;
+}
+
+
+#btnToTop {
+
+   opacity: 0;
+   animation: ani-name-keyframes 2.5s forwards;
+   @keyframes ani-name-keyframes {
+      0% {
+         opacity: 0;
+      }
+      100% {
+         opacity: 1;
+      }
+   }
+
+   //transition: 3s all; // здесь почему то не срабатывает
+   // потому что наверно из за того что у нас как бы рождается дивка через
+   //display = 'block'
+
+   display: none; /* Hidden by default */
+   position: fixed; /* Fixed/sticky position */
+   bottom: 20px; /* Place the button at the bottom of the page */
+   right: 30px; /* Place the button 30px from the right */
+   z-index: 99; /* Make sure it does not overlap */
+   border: none; /* Remove borders */
+   outline: none; /* Remove outline */
+   background-color: #bfdaed; /* Set a background color */
+   color: white; /* Text color */
+   cursor: pointer; /* Add a mouse pointer on hover */
+   //padding: 15px; /* Some padding */
+   border-radius: 10px; /* Rounded corners */
+   font-size: 20px; /* Increase font size */
+
+   a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+
+      div {
+         padding-top: 10px;
+      }
+   }
+
+   &:hover {
+      background-color: #555; /* Add a dark-grey background on hover */
+   }
+
+}
+
+
+
