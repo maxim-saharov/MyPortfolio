@@ -1,4 +1,17 @@
 //
+'use strict'
+
+const outputDateSeconds = () => {
+   const date = new Date()
+   let output = String(
+      date.getHours()
+      + ':' + date.getMinutes()
+      + ':' + date.getSeconds()
+      + ':' + date.getMilliseconds()
+   )
+   output = output + ''
+   return output
+}
 
 const
    hamburger = document.querySelector( '.hamburger' ),
@@ -55,6 +68,59 @@ function topFunction() {
 }
 
 //endregion
+
+
+//region btnCallBack
+//console.log( 'старт', outputDateSeconds() )
+
+let btnCallBack = document.getElementById( '3db4d4' )
+
+let sayHi = () => {
+
+   if (btnCallBack) {
+      if (btnCallBack.classList.contains( 'btn-call-back' )) {
+         //console.log( 'уже есть клас', outputDateSeconds() )
+      } else {
+         btnCallBack.classList.add( 'btn-call-back' )
+         const btnCallBackChildNode0 = btnCallBack.childNodes[0]
+         btnCallBackChildNode0.style.zIndex = '50'
+         //console.log( 'добавили клас', outputDateSeconds() )
+      }
+
+   } else {
+      btnCallBack = document.getElementById( '3db4d4' )
+
+      if (btnCallBack) {
+         btnCallBack.classList.add( 'btn-call-back' )
+         //console.log( 'добавили клас сразу', outputDateSeconds() )
+
+         const btnCallBackChildNode0 = btnCallBack.childNodes[0]
+         btnCallBackChildNode0.style.zIndex = '50'
+         //console.log( 'childNodes', childNodes.style )
+
+      } else {
+         //console.log( 'элемент null', outputDateSeconds() )
+      }
+   }
+}
+
+sayHi()
+
+let timerId = setInterval( () => {
+   sayHi()
+}, 100 )
+
+setTimeout( () => {
+   clearInterval( timerId )
+   //console.log( 'stop', outputDateSeconds() )
+}, 1000 )
+//endregion
+
+
+
+
+
+
 
 
 
