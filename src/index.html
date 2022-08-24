@@ -234,7 +234,7 @@
 <section class='resume' id='resume'>
    <div class='container'>
       <h2 class='title title_fz16 title__section-title'>Опыт</h2>
-      <div class='title title_fz36 title__section-subtitle'>Чем я буду полезна</div>
+      <div class='title title_fz36 title__section-subtitle'>Чем я буду полезен</div>
       <div class='divider'></div>
 
       <div class='resume__wrapper'>
@@ -559,7 +559,10 @@
                Или оставьте ваши данные и я сам вам напишу:
             </div>
 
-            <form action='#' class='contacts__form'>
+
+            <form id='form-contacts'
+                  class='contacts__form'
+            >
                <div class='contacts__input'>
                   <input required name='name' id='name' type='text'>
                   <label for='name'>Ваше имя</label>
@@ -574,15 +577,20 @@
                   <label for='text'>Ваше сообщение</label>
                </div>
                <div class='contacts__triggers'>
-                  <button class='contacts__btn btn'>Отправить сообщение</button>
+                  <button class='contacts__btn btn' type='submit'>
+                     Отправить сообщение
+                  </button>
+
                   <div class='contacts__policy'>
-                     <input required type='checkbox'>
+                     <!--                     <input required type='checkbox'>-->
+                     <input type='checkbox'>
                      <span>Я согласен(а) с <a
                         target='_blank' href='/policy.html'>политикой конфиденциальности
                      </a></span>
                   </div>
                </div>
             </form>
+
          </div>
 
 

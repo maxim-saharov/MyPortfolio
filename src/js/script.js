@@ -1,17 +1,17 @@
 //
 'use strict'
 
-const outputDateSeconds = () => {
-   const date = new Date()
-   let output = String(
-      date.getHours()
-      + ':' + date.getMinutes()
-      + ':' + date.getSeconds()
-      + ':' + date.getMilliseconds()
-   )
-   output = output + ''
-   return output
-}
+// const outputDateSeconds = () => {
+//    const date = new Date()
+//    let output = String(
+//       date.getHours()
+//       + ':' + date.getMinutes()
+//       + ':' + date.getSeconds()
+//       + ':' + date.getMilliseconds()
+//    )
+//    output = output + ''
+//    return output
+// }
 
 const
    hamburger = document.querySelector( '.hamburger' ),
@@ -115,6 +115,22 @@ setTimeout( () => {
    //console.log( 'stop', outputDateSeconds() )
 }, 1000 )
 //endregion
+
+
+const formContacts = document.getElementById( 'form-contacts' )
+
+//console.log( formContacts )
+
+function onSubmit(event) {
+   event.preventDefault()
+   console.log( event )
+   alert( 'Все формы работают на сайте \n' +
+      'https://maxim-saharov.com.ua/Pulse' )
+
+}
+
+formContacts.addEventListener( 'submit', onSubmit )
+
 
 
 
