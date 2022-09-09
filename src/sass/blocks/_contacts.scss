@@ -43,16 +43,12 @@
       margin-right: 25px;
 
       img {
-         max-width: 30px;
-         max-height: 30px;
+         width: 30px;
+         height: 30px;
       }
 
       &:hover {
          text-decoration: none;
-      }
-
-      &-pointerNone {
-         pointer-events: none;
       }
    }
 

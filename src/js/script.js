@@ -1,22 +1,20 @@
 //
 'use strict'
 
-const outputDateSeconds = () => {
-   const date = new Date()
-   let output = String(
-      date.getHours()
-      + ':' + date.getMinutes()
-      + ':' + date.getSeconds()
-      + ':' + date.getMilliseconds()
-   )
-   output = output + ''
-   return output
-}
+// const outputDateSeconds = () => {
+//    const date = new Date()
+//    let output = String(
+//       date.getHours()
+//       + ':' + date.getMinutes()
+//       + ':' + date.getSeconds()
+//       + ':' + date.getMilliseconds()
+//    )
+//    output = output + ''
+//    return output
+// }
 
 
 document.addEventListener( 'DOMContentLoaded', () => {
-
-   console.log( 'DOM готов!' )
 
    //region hamburger
    const
@@ -80,7 +78,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
 
    //region btnCallBack
-   console.log( 'старт', outputDateSeconds() )
+   //console.log( 'старт', outputDateSeconds() )
 
    let btnCallBackEl = document.getElementById( '3db4d4' )
 
@@ -88,12 +86,12 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
       if (btnCallBackEl) {
          if (btnCallBackEl.classList.contains( 'btn-call-back' )) {
-            console.log( 'уже есть клас', outputDateSeconds() )
+            //console.log( 'уже есть клас', outputDateSeconds() )
          } else {
             btnCallBackEl.classList.add( 'btn-call-back' )
             const btnCallBackChildNode0 = btnCallBackEl.childNodes[0]
             btnCallBackChildNode0.style.zIndex = '50'
-            console.log( 'добавили клас', outputDateSeconds() )
+            //console.log( 'добавили клас', outputDateSeconds() )
          }
 
       } else {
@@ -101,13 +99,13 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
          if (btnCallBackEl) {
             btnCallBackEl.classList.add( 'btn-call-back' )
-            console.log( 'добавили клас сразу', outputDateSeconds() )
+            //console.log( 'добавили клас сразу', outputDateSeconds() )
 
             const btnCallBackChildNode0 = btnCallBackEl.childNodes[0]
             btnCallBackChildNode0.style.zIndex = '50'
 
          } else {
-            console.log( 'элемент null', outputDateSeconds() )
+            //console.log( 'элемент null', outputDateSeconds() )
          }
       }
    }
@@ -120,7 +118,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
    setTimeout( () => {
       clearInterval( timerId )
-      console.log( 'stop', outputDateSeconds() )
+      //console.log( 'stop', outputDateSeconds() )
    }, 2000 )
    //endregion
 
@@ -130,7 +128,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
    function onSubmit(event) {
       event.preventDefault()
-      console.log( event )
+      //console.log( event )
       alert( 'Все формы и отправки на почту работают на сайте \n' +
          'https://maxim-saharov.com.ua/Pulse \n' +
          'здесь можно оставить заявку через кнопку "Call back"' )

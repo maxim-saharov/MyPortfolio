@@ -26,17 +26,18 @@
          }
       }
 
-      ul {
+      & > ul {
          list-style-type: none;
          padding: 0;
 
-         li {
+         & > li {
             position: relative;
 
             &:after {
                content: '';
                width: 1px;
-               height: calc(100% + 16px);
+               //height: calc(100% + 16px);
+               height: calc(100% + 24px);
                position: absolute;
                top: -16px;
                left: 0;
@@ -69,7 +70,11 @@
 
       &-body {
          padding-left: 43px;
-         margin-top: 12px;
+         //margin-top: 15px;
+         margin-top: 17px;
+         font-size: 13px;
+         //line-height: 18px;
+         line-height: 19px;
       }
 
       &-icon {
@@ -86,14 +91,28 @@
       }
 
       &-location {
-         font-size: 12px;
+         font-size: 13px;
          line-height: 18px;
          margin-top: 5px;
       }
 
-      &-body {
-         font-size: 12px;
-         line-height: 18px;
-      }
    }
+
+
+   &__inner-li {
+      list-style-type: disc;
+      padding-left: 57px;
+      margin-top: 22px;
+
+      li {
+         padding-left: 3px;
+         margin-top: 8px;
+         font-size: 13px;
+         line-height: 19px;
+
+      }
+
+   }
+
+
 }
