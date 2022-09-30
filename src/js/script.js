@@ -23,12 +23,19 @@ document.addEventListener( 'DOMContentLoaded', () => {
       closeElem = document.querySelector( '.menu__close' ),
       menuItem = document.querySelectorAll( '.menu__link' )
 
+   let isActiveMenu = false
+   let isNeedCloseMenu = false
+
    hamburger.addEventListener( 'click', () => {
       menu.classList.add( 'active' )
+      isActiveMenu = true
+      isNeedCloseMenu = false
    } )
 
    closeElem.addEventListener( 'click', () => {
       menu.classList.remove( 'active' )
+      isActiveMenu = false
+      isNeedCloseMenu = false
    } )
 
    const counters = document.querySelectorAll( '.skills__ratings-counter' ),
@@ -38,11 +45,26 @@ document.addEventListener( 'DOMContentLoaded', () => {
       lines[i].style.width = item.innerHTML
    } )
 
-   // убираем меню при нажатии
+   // remove menu on click from item
    menuItem.forEach( item => {
       item.addEventListener( 'click', () => {
          menu.classList.remove( 'active' )
+         isActiveMenu = false
+         isNeedCloseMenu = false
       } )
+   } )
+
+   // remove menu on click from any free space
+   document.addEventListener( 'click', () => {
+      if (isActiveMenu) {
+         if (isNeedCloseMenu) {
+            menu.classList.remove( 'active' )
+            isActiveMenu = false
+            isNeedCloseMenu = false
+         } else {
+            isNeedCloseMenu = true
+         }
+      }
    } )
    //endregion
 
@@ -129,9 +151,12 @@ document.addEventListener( 'DOMContentLoaded', () => {
    function onSubmit(event) {
       event.preventDefault()
       //console.log( event )
-      alert( 'Все формы и отправки на почту работают на сайте \n' +
+      // alert( 'Все формы и отправки на почту работают на сайте \n' +
+      //    'https://maxim-saharov.com.ua/Pulse \n' +
+      //    'здесь можно оставить заявку через кнопку "Call back"' )
+      alert( 'All forms and senders work on the site \n' +
          'https://maxim-saharov.com.ua/Pulse \n' +
-         'здесь можно оставить заявку через кнопку "Call back"' )
+         'here you can apply using the button "Call back"' )
 
    }
 

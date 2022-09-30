@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Disallow: /js/cityhost2.js
